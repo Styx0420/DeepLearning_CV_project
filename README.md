@@ -28,7 +28,7 @@ Hyperparameters tuned: Learning Rate (lr) and Batch Size (batch_size)
 ![completed_training_jobs3.png](completed_training_jobs3.png)
 ![completed_training_jobs4.png](completed_training_jobs4.png)
 
-I used SageMaker’s built-in Hyperparameter Tuner to automatically find the best hyperparameters. The objective metric was validation_accuracy extracted from logs during training：
+I used SageMaker’s built-in Hyperparameter Tuner to automatically find the best hyperparameters. The objective metric are validation_accuracy and loss extracted from logs during training：
 ![section_of_training_log.png](section_of_training_log.png)
 
 
@@ -75,12 +75,10 @@ The best trained model was deployed to a real-time SageMaker endpoint, and the d
 
 code piece can be retrieved in train_and_deploy.ipynb
 
-As shown above, a sample prediction was made on a German Shepherd Dog image, 
-![German_shepherd_dog_04931.png](German_shepherd_dog_04931.png)
+As shown above, a sample prediction was made on a German Shepherd Dog image file (in this repo)
 The model response is: {'predicted_class': 70}. Mapping 70 back to class index confirmed the prediction matched the correct breed
 
-Another try is given to:
-![Golden_retriever_05221.png](Golden_retriever_05221.png)
+Another try is given to a golden retriver dog image (also in this repo)
 which has a response of {'predicted_class': 75}. Mapping 75 back to class index confirmed this correct prediction result.
 
 
